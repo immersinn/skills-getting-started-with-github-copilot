@@ -53,9 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
           : "<li class=\"empty-participants\">No participants yet</li>";
 
         activityCard.innerHTML = `
-          <h4>${name}</h4>
-          <p>${details.description}</p>
-          <p><strong>Schedule:</strong> ${details.schedule}</p>
+          <h4>${escapeHtml(String(name ?? ""))}</h4>
+          <p>${escapeHtml(String(details.description ?? ""))}</p>
+          <p><strong>Schedule:</strong> ${escapeHtml(String(details.schedule ?? ""))}</p>
           <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
           <div class="participants-section">
             <p class="participants-title"><strong>Participants:</strong></p>
